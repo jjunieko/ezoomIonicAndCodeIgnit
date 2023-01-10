@@ -1,0 +1,7 @@
+{
+  "name": "ezoomFront",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
