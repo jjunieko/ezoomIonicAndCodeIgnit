@@ -9,7 +9,7 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding ion-text-center">
 	<div class="preview">
 		<ion-avatar (click)="changeImage()">
 			<img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
@@ -20,4 +20,9 @@
 			</ng-template>
 		</ion-avatar>
 	</div>
+
+	<ion-button (click)="navigate()">
+		Ir para o Crud
+		<ion-icon slot="icon-only" name="add"></ion-icon>
+	</ion-button>
 </ion-content>

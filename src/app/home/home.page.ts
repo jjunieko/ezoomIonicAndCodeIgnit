@@ -30,6 +30,10 @@ export class HomePage {
 		this.router.navigateByUrl('/', { replaceUrl: true });
 	}
 
+	navigate(){
+		this.router.navigate(['/crud'])
+	  }
+
 	async changeImage() {
 		const image = await Camera.getPhoto({
 			quality: 90,
@@ -47,6 +51,7 @@ export class HomePage {
 			loading.dismiss();
 
 			if (!result) {
+				console.log(!result)
 				const alert = await this.alertController.create({
 					header: 'Upload falhou',
 					message: 'Aconteceu um problema no envio do Avatar',

@@ -15,6 +15,8 @@ import { Capacitor } from '@capacitor/core';
 import { indexedDBLocalPersistence, initializeAuth } from 'firebase/auth';
 import { getApp } from 'firebase/app';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
 	declarations: [AppComponent],
 	entryComponents: [],
@@ -22,6 +24,7 @@ import { getApp } from 'firebase/app';
 		BrowserModule,
 		IonicModule.forRoot(),
 		AppRoutingModule,
+		HttpClientModule,
 		provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
 		provideAuth(() => {
 			if (Capacitor.isNativePlatform()) {

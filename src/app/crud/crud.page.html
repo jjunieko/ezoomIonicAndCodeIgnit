@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons>
+      <ion-button (click)="navigate()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <ion-title> Buscar dados no banco </ion-title>
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out" class="ion-padding" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar size="small" (ionInput)="search($event)" (ionClear)="clear()"></ion-searchbar>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>
+            <ion-input type="text" formControlName="nome" required placeholder="Nome" class="ion-margin-bottom">
+            </ion-input>
+          </ion-label>
+        </ion-item>
+          <ion-item>
+            <ion-label>
+              <ion-input type="text" formControlName="valor" required placeholder="valor" class="ion-margin-bottom"
+                color="ligth"></ion-input>
+            </ion-label>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block">
+          Salvar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label>
+        <h4>{{ item.nome }}</h4>
+        <p>R$ {{ item.valor }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -16,10 +16,15 @@ const routes: Routes = [
 		loadChildren: () => import('./home/home.module').then((m) => m.HomePageModule),
 		...canActivate(redirectUnauthorizedToLogin)
 	},
+	// {
+	// 	path: '**',
+	// 	redirectTo: '',
+	// 	pathMatch: 'full'
+	// },
 	{
-		path: '**',
-		redirectTo: '',
-		pathMatch: 'full'
+		path: 'crud',
+		loadChildren: () => import('./crud/crud.module').then( m => m.CrudPageModule),
+		...canActivate(redirectUnauthorizedToLogin)
 	}
 ];
 
