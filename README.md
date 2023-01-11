@@ -8,7 +8,21 @@ o dump do banco de dados está dentro da pasta ezoomFront.
 
 adição de imagens e apenas um detalhe que daria para integrar ao banco de dados, porém retirei o acesso para caso sofra ataques no código. 
 
+### comando front 
 
+-- npm i 
+
+-- ionic serve
+
+### back end
+
+-- baixar arquivo completo
+
+-- composer update
+
+-- php spark serve 
+
+-- db: ezoomdb
 
 ### O banc end se encontra na branch Mastes para não ficar muitas pastas juntas.
 
